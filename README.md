@@ -10,8 +10,8 @@ O Projeto utiliza:
 
 Este projeto demonstra:
 -------
--Utilização básica do Framework7 utilizando tema Material (Android)
--Utilização de recursos do Cordova: Camera, GPS e Cód. de Barras.
+- Utilização básica do Framework7 utilizando tema Material (Android)
+- Utilização de recursos do Cordova: Camera, GPS e Cód. de Barras.
 
 Modo de utilização
 -------

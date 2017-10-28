@@ -1,0 +1,304 @@
+/* Oculta termos de pesquisa*/
+.searchable .searchstring{
+    display: none;
+    text-transform: lowercase;
+}
+
+/**
+ * Objeto de galeria em miniaturas.
+ * Possui tres tamanhos: pequeno (sm), medio (md) e grande (lg).
+ *
+ * Estrutura:
+ *     galeria-miniatura-wrapper
+ *         galeria-item-[tamanho]
+ *             img
+ *
+ */
+
+ .galeria-miniatura-wrapper{
+    width: 100%;
+    min-height: 100px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    display: flex;
+}
+
+.galeria-item {
+    border: 1px solid rgba(157,157,157,0.3);
+    box-shadow: 2px 3px 3px rgba(157,157,157,0.3);
+    margin: auto;
+    position: relative;
+    margin: 2.5px 5px 5px 2.5px;
+    content: " ";
+    display: inline-block;
+}
+
+.galeria-item-sm {
+    width: 65px;
+    height: 65px;
+    border-radius: 7px;
+    transition: 1s;
+}
+
+.galeria-item-md {
+    width: 85px;
+    height: 85px;
+    border-radius: 10px;
+    transition: 1s;
+}
+
+.galeria-item-lg {
+    width: 125px;
+    height: 125px;
+    border-radius: 15px;
+    transition: 1s;
+}
+
+.galeria-item-sm img,
+.galeria-item-md img,
+.galeria-item-lg img{
+    position: relative;
+    width: 98%;
+    height: 98%;
+    flex: grow;
+    padding: 1%;
+    z-index: 10;
+    transition: 1s;
+}
+
+.galeria-item-sm img {border-radius: 7px;transition: 1s;}
+.galeria-item-md img {border-radius: 10px;transition: 1s;}
+.galeria-item-lg img {border-radius: 15px;transition: 1s;}
+
+.galeria-item-sm>.fa,
+.galeria-item-md>.fa,
+.galeria-item-lg>.fa{
+    text-align: center;
+    color: lightgrey;
+    cursor: pointer;
+}
+
+.galeria-item-sm>.fa{
+    margin: 7px;
+    font-size: 35pt;
+    margin-top: 12px;
+    transition: 1s;
+}
+
+.galeria-item-md>.fa{
+    margin: 10px;
+    font-size: 45pt;
+    margin-top: 15px;
+    transition: 1s;
+}
+
+.galeria-item-lg>.fa{
+    margin: 19px;
+    font-size: 59pt;
+    margin-top: 26px;
+    transition: 1s;
+}
+
+/**
+ * Dock Badge é um circulo flutuante que se instala no canto inferior direito do elemento
+ * Possui dois tamanhos: pequeno (sm) e grande (lg);
+ * Pode ser agrupados em até 2 badges
+ *
+ * Utilização:
+ * .dock-badge-[tamanho] .dock-badge-[1 ou 2]
+ *
+ * Compatível com os elementos .galeria-item-*
+ */
+ .dock-badge-sm{
+    border-radius: 50%;
+    width: 22px;
+    background-color: rgba(255,255,255,0.8);
+    text-align: center;
+    font-size: 10pt;
+    z-index: 15;
+    cursor: pointer;
+    box-shadow: 1px 2px 2px rgba(157,157,157,0.3);
+    right: 3px;
+    transition: 1s;
+}
+
+.dock-badge-lg{
+    border-radius: 50%;
+    width: 28px;
+    background-color: rgba(255,255,255,0.8);
+    text-align: center;
+    font-size: 13pt;
+    z-index: 15;
+    cursor: pointer;
+    box-shadow: 1px 2px 2px rgba(157,157,157,0.3);
+    right: 3px;
+    transition: 1s;
+}
+
+.dock-badge-1,
+.dock-badge-2{
+    bottom: 3px;
+    float: right;
+    position: absolute;
+}
+
+.dock-badge-lg.dock-badge-1+.dock-badge-lg.dock-badge-2,
+.dock-badge-lg.dock-badge-1+.dock-badge-sm.dock-badge-2{
+    right: 32px;
+}
+
+.dock-badge-sm.dock-badge-1+.dock-badge-sm.dock-badge-2,
+.dock-badge-sm.dock-badge-1+.dock-badge-lg.dock-badge-2{
+    right: 25px;
+}
+
+/**
+ * Diversos fixes e facilitadores CSS
+ */
+
+ /* Cor de sobreposição do fundo da barra de status*/
+ .statusbar-overlay {
+    background: #000000;
+}
+
+/* Força um conteúdo abaixo da tela maior para compatibilidade com telas barra de navegação */
+.page-content{
+    padding-bottom: 50px;
+}
+
+/* Força os títulos do sistema ficarem em caixa alta*/
+li.item-divider,
+div.content-block-title{
+    text-transform: uppercase;
+}
+
+/* Remove margem esquerda dos itens de lista*/
+div.item-inner {
+    margin-left: 0px !important;
+}
+
+/* Facilitador para negrito */
+.fwBold {
+    font-weight: bold;
+}
+
+/* Padroniza linha de botões para ocupar 95% da tela mantendo margens proporcionais horizontais */
+.buttons-row{
+    width: 95%;
+    margin-left: 2.5%
+}
+
+/* Classe chave usada para estilizar com base no tema atual os campos requeridos de um formulário */
+.temaRequerido{
+    font-weight: bold;
+}
+
+/* Override de cores padrão para acrescentar !important e garantir que os valores do tema sejam aplicados nas fontes */
+.color-blue {
+    color: #2196f3 !important;
+}
+.color-indigo {
+    color: #3f51b5 !important;
+}
+.color-red {
+    color: #f44336 !important;
+}
+.color-pink {
+    color: #e91e63 !important;
+}
+.color-orange {
+    color: #ff9800 !important;
+}
+.color-brown {
+    color: #795548 !important;
+}
+.color-green {
+    color: #4caf50 !important;
+}
+.color-teal {
+    color: #009688 !important;
+}
+.color-gray {
+    color: #9e9e9e !important;
+}
+.color-bluegray {
+    color: #607d8b !important;
+}
+.color-black {
+    color: #000000 !important;
+}
+
+/* Override de cores padrão para acrescentar !important e garantir que os valores do tema sejam aplicados nos fundos */
+.bg-blue {
+    background-color: #2196f3 !important;
+}
+.bg-indigo {
+    background-color: #3f51b5 !important;
+}
+.bg-red {
+    background-color: #f44336 !important;
+}
+.bg-pink {
+    background-color: #e91e63 !important;
+}
+.bg-orange {
+    background-color: #ff9800 !important;
+}
+.bg-brown {
+    background-color: #795548 !important;
+}
+.bg-green {
+    background-color: #4caf50 !important;
+}
+.bg-teal {
+    background-color: #009688 !important;
+}
+.bg-gray {
+    background-color: #9e9e9e !important;
+}
+.bg-bluegray {
+    background-color: #607d8b !important;
+}
+.bg-black {
+    background-color: #000000 !important;
+}
+
+
+/* Adiciona texto justificado */
+.justificado,
+.content-block > p,
+.content-block > blockquote{
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+/* Imagens com largura limitada à 100% da visualização */
+img.viewport100 {
+    position: relative;
+    margin: 15px;
+    width: calc(100vw - 32px);
+    float: left;
+}
+
+/* Imagens com largura limitada à 50% da visualização */
+img.viewport50 {
+    position: relative;
+    margin: 15px;
+    width: calc(50vw - 32px);
+    float: left;
+}
+
+/* Imagens com bordas */
+img.bordered {
+    border: 1px solid grey;
+}
+
+/* Classes auxiliares */
+.clearboth {
+    clear: both;
+}
+
+.oculto {
+    display: none;
+}

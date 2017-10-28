@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>Controle financeiro</title>
+    <!-- Framework7 Library CSS-->
+    <link rel="stylesheet" href="lib/framework7/css/framework7.material.min.css" charset="utf-8">
+    <link rel="stylesheet" href="lib/framework7/css/framework7.material.colors.min.css" charset="utf-8">
+    <!-- Font Awesome Library CSS -->
+    <link rel="stylesheet" href="lib/font-awesome-4.7.0/css/font-awesome.min.css" charset="utf-8">
+    <!-- Customização padrão CSS -->
+    <link rel="stylesheet" href="css/main.min.css">
+</head>
+<body>
+    <!-- Barra de status para visualização em tela cheia-->
+    <div class="statusbar-overlay"></div>
+    <!-- Overlay para paineis-->
+    <div class="panel-overlay"></div>
+    <!-- Painel esquerdo - Menu principal -->
+    <div class="panel panel-left panel-reveal">
+        <div class="navbar">
+            <div class="navbar-inner">
+                <div class="center sliding">Menu principal</div>
+            </div>
+        </div>
+        <div class="list-block">
+            <ul>
+                <li class="item-divider">Geral</li>
+                <li class="item-content">
+                    <div class="item-media"><i class="fa fa-fw fa-line-chart"></i></div>
+                    <div class="item-inner">
+                        <a href="#" class="item-title" onclick="$VLKLeiaute.carregarPagina('resumo');">Resumo</a>
+                    </div>
+                </li>
+                <li class="item-content">
+                    <div class="item-media"><i class="fa fa-fw fa-rocket"></i></div>
+                    <div class="item-inner">
+                        <a href="#" class="item-title" onclick="$VLKLeiaute.carregarPagina('lancamentos');">Lançamentos</a>
+                    </div>
+                </li>
+                <li class="item-content">
+                    <div class="item-media"><i class="fa fa-fw fa-gears"></i></div>
+                    <div class="item-inner">
+                        <a href="#" class="item-title" onclick="$VLKLeiaute.carregarPagina('camera');">Cordova</a>
+                    </div>
+                </li>
+                <li class="item-content">
+                    <div class="item-media"><i class="fa fa-fw fa-info"></i></div>
+                    <div class="item-inner">
+                        <a href="#" class="item-title" onclick="$VLKConfig.paginaSobre();">Sobre</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- Views-->
+    <div class="views">
+        <!-- View principal -->
+        <div class="view view-main">
+            <!-- Top Navbar-->
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <!-- We have home navbar without left link-->
+                    <div class="left"><a href="#" class="link icon-only open-panel" data-panel="left"> <i class="fa fa-bars"></i></a></div>
+                    <div class="center sliding">Controle financeiro</div>
+                </div>
+            </div>
+            <!-- Pages, because we need fixed-through navbar and toolbar, it has additional appropriate classes-->
+            <div class="pages navbar-through toolbar-through">
+                <!-- Page, data-page contains page name-->
+                <div data-page="pedidos" class="page"></div>
+                <div data-page="fornecedores" class="page"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Popup Sobre -->
+    <script id="sobre" type="text/framework7">
+        <div class="popup">
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <div class="center sliding">Sobre</div>
+                    <div class="right">
+                        <a href="#" class="link icon-only close-popup data-panel="right"><i class="fa fa-times"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="content-block-title temaRequerido">Informãções técnicas:</div>
+            <div class="content-block">
+                <p><b>{{aplicativo}}:</b> v{{versao}}</p>
+                <p>Desenvolvido por: <a href="http://valkhan.com.br">Valkhan Apps</a></p>
+            </div>
+        </div>
+    </script>
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <!-- Framework7 Library JS-->
+    <script type="text/javascript" src="lib/framework7/js/framework7.min.js" charset="utf-8"></script>
+    <!-- LocalStorageDB Library JS (customizado) -->
+    <script type="text/javascript" src="lib/localstoragedb/localstoragedb.min.js" charset="utf-8"></script>
+    <!-- Moment Library JS -->
+    <script type="text/javascript" src="lib/moment/moment.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="lib/moment/moment-pt-br.js" charset="utf-8"></script>
+    <!-- Customização padrão JS -->
+    <script type="text/javascript" src="js/funcoes.min.js"></script>
+    <script type="text/javascript" src="js/app.min.js"></script>
+</body>
+</html>
